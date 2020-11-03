@@ -1,125 +1,97 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-  color: #545454;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
   display: flex;
-  font-family: sans-serif;
+  align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
-
 .container {
-  background: #14BDAC;
-  margin: 50px;
-  padding: 50px;
-  border-radius: 25px;
-}
-
-.title {
-  text-align: center;
-}
-
-.title span {
-  color: #F2EBD3;
-}
-
-.status-action {
-  display: flex;
-  margin-top: 25px;
-  font-size: 25px;
-  justify-content: space-around;
-  height: 30px;
-}
-
-.status span {
-  color: #F2EBD3;
-}
-
-.reset {
-  cursor: pointer;
-}
-
-.reset:hover {
-  color: #F2EBD3;
-}
-
-.game-grid {
-  background: #0DA192;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 15px;
-  margin-top: 50px;
-}
-
-.game-cell {
-  background: #14BDAC;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card {
+  transform-style: preserve-3d;
+  min-height: 80vh;
+  width: 35rem;
+  border-radius: 30px;
+  padding: 0rem 5rem;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+}
+
+.sneaker {
+  min-height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sneaker img {
+  width: 20rem;
+  z-index: 2;
+  transition: all 0.75s ease-out;
+}
+.circle {
+  width: 15rem;
+  height: 15rem;
+  background: linear-gradient(
+    to right,
+    rgba(245, 70, 66, 0.75),
+    rgba(8, 83, 156, 0.75)
+  );
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.info h1 {
+  font-size: 3rem;
+  transition: all 0.75s ease-out;
+}
+.info h3 {
+  font-size: 1.3rem;
+  padding: 2rem 0rem;
+  color: #585858;
+  font-weight: lighter;
+  transition: all 0.75s ease-out;
+}
+.sizes {
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.75s ease-out;
+}
+.sizes button {
+  padding: 0.5rem 2rem;
+  background: none;
+  border: none;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
   cursor: pointer;
-  height: 200px;
-  width: 200px;
+  font-weight: bold;
+  color: #585858;
 }
-
-.x,
-.o {
-  cursor: default;
+button.active {
+  background: #585858;
+  color: white;
 }
-
-.x::after {
-  content: '×';
-  font-size: 200px;
+.purchase {
+  margin-top: 5rem;
+  transition: all 0.75s ease-out;
 }
-
-.o::after {
-  content: '○';
-  color: #F2EBD3;
-  font-size: 225px;
-}
-
-.won::after {
-  color: #BD022F;
-}
-
-@media only screen and (max-width: 1024px) {
-  .game-grid {
-    margin-top: 25px;
-    grid-gap: 10px;
-  }
-
-  .game-cell {
-    height: 150px;
-    width: 150px;
-  }
-
-  .x::after {
-    font-size: 150px;
-  }
-
-  .o::after {
-    font-size: 175px;
-  }
-}
-
-@media only screen and (max-width: 540px) {
-  .container {
-    margin: 25px;
-    padding: 25px;
-  }
-
-  .game-cell {
-    height: 100px;
-    width: 100px;
-  }
-
-  .x::after {
-    font-size: 100px;
-  }
-
-  .o::after {
-    font-size: 125px;
-  }
+.purchase button {
+  width: 100%;
+  padding: 1rem 0rem;
+  background: #f54642;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bolder;
 }
